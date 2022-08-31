@@ -1,0 +1,13 @@
+@import './sass/utils/common';
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-family: 'Raleway', sans-serif;
+  
+
+  scroll-behavior: smooth;
+
+  background-color: var(--main-white-color);
+}

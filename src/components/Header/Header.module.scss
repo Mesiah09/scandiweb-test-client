@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 100px;
+}
+
+.nav {
+    display: flex;
+}
+
+.category {
+    &:not(:last-child) {
+        margin-right: 32px;
+    }
+}
+
+.curWrapper {
+    margin-right: 25px;
+}
+
+.trail {
+    display: flex;
+}
