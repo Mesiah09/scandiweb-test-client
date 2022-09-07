@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
 // Initializing ApolloClient, passing it's constructor a configuration object with uri and cache fields
 const client = new ApolloClient({

@@ -1,12 +1,16 @@
-import Header from "./components/Header";
+import React, { PureComponent } from "react";
+
+import MyRoutes from "./Routes";
 import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-    </div>
-  );
+class App extends PureComponent {
+  render() {
+    return (
+      <div>
+        <MyRoutes />
+      </div>
+    );
+  }
 }
 
 export default App;

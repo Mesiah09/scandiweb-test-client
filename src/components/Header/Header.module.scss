@@ -2,16 +2,15 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 100px;
+    background-color: grey;
 }
 
 .nav {
     display: flex;
 }
 
-.category {
-    &:not(:last-child) {
-        margin-right: 32px;
-    }
+.categoriesWrapper {
+    display: flex;
 }
 
 .curWrapper {

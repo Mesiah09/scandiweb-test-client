@@ -20,7 +20,10 @@ export class Currencies extends PureComponent {
                 this.props.value(item.symbol);
                 window.location.reload(false);
               }}
-            ></div>
+            >
+              <div className={s.symbol}>{item.symbol}</div>
+              <div className={s.label}>{item.label}</div>
+            </div>
           ));
         }}
       </Query>

@@ -7,7 +7,9 @@ import s from "./Logo.module.scss";
 const Logo = () => {
   return (
     <div>
-      <Icon name="icon-logo" width="32" height="30" />
+      <NavLink exact="true" to="/">
+        <Icon name="icon-logo" width="32" height="30" />
+      </NavLink>
     </div>
   );
 };

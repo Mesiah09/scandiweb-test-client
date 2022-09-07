@@ -1,0 +1,21 @@
+.currencies {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0px;
+    cursor: pointer;
+
+}
+
+.symbol,
+.label {
+    padding: 5px;
+
+    font-weight: 500;
+}
+
+
+.currencies:hover {
+    color: #5ECE7B;
+    background-color: white;
+}
