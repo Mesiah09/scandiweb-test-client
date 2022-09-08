@@ -1,26 +1,28 @@
-import React from "react";
+import React, { PureComponent } from "react";
 
 import Logo from "./Logo/Logo";
 import Currencies from "./Currencies";
-import Cart from "./Cart";
+// import Cart from "./Cart";
 import Categories from "./Categories";
 import s from "./Header.module.scss";
 
-const Header = () => {
-  return (
-    <div className={s.header}>
-      <div className={s.categoriesWrapper}>
-        <Categories />
-      </div>
-      <Logo />
-      <div className={s.trail}>
-        <div className={s.curWrapper}>
-          <Currencies />
+export class Header extends PureComponent {
+  render() {
+    return (
+      <div className={s.header}>
+        <div className={s.categoriesWrapper}>
+          <Categories />
         </div>
-        <Cart />
+        <Logo />
+        <div className={s.trail}>
+          <div className={s.curWrapper}>
+            <Currencies />
+          </div>
+          {/* <Cart /> */}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Header;
