@@ -1,8 +1,21 @@
-import React from "react";
-import s from "./ProductDescPage.module.scss";
+import React, { PureComponent } from "react";
+import Details from "../../components/Details/Details";
+import Header from "../../components/Header";
 
-const ProductDescPage = () => {
-  return <div>ProductDescPage</div>;
-};
+export class ProductDetails extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-export default ProductDescPage;
+  render() {
+    return (
+      <>
+        <Header />
+        <Details />
+      </>
+    );
+  }
+}
+
+export default ProductDetails;

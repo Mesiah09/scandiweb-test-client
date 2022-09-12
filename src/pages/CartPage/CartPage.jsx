@@ -1,8 +1,18 @@
-import React from "react";
+import React, { PureComponent } from "react";
+import Header from "../../components/Header";
+import Cart from "../../components/Header/Cart";
+
 import s from "./CartPage.module.scss";
 
-const CartPage = () => {
-  return <div>CartPage</div>;
-};
+export class CartPage extends PureComponent {
+  render() {
+    return (
+      <>
+        <Header />
+        <Cart />
+      </>
+    );
+  }
+}
 
 export default CartPage;
