@@ -10,7 +10,7 @@ import {
 import Prices from "./Prices";
 import s from "./Cart.module.scss";
 
-export class CartToggle extends PureComponent {
+export class Cart extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -180,4 +180,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 const functionFromConnect = connect(mapStateToProps, mapDispatchToProps);
 
-export default functionFromConnect(CartToggle);
+export default functionFromConnect(Cart);

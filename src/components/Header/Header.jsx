@@ -1,11 +1,11 @@
 import React, { PureComponent } from "react";
-import { Connect } from "react-redux";
+import { connect } from "react-redux";
 
 import Icon from "../../shared/components/Icon";
 import trolley from "../../images/trolley.png";
 import Logo from "./Logo/Logo";
 import Currencies from "./Currencies";
-import CartToggle from "./Cart";
+import Cart from "./Cart";
 import Categories from "./Categories";
 import s from "./Header.module.scss";
 
@@ -97,7 +97,7 @@ export class Header extends PureComponent {
             <div
               className={`dropdown ${this.state.toggleCart && "active-menu"}`}
             ></div>
-            {this.state.toggleCart ? <CartToggle /> : ""}
+            {this.state.toggleCart ? <Cart /> : ""}
           </div>
         </div>
       </div>
@@ -105,4 +105,13 @@ export class Header extends PureComponent {
   }
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+  return {
+    cart: state.shop.cart,
+    totalQty: state.shop.totalQty,
+  };
+};
+
+const functionFromConnect = connect(mapStateToProps, null);
+
+export default functionFromConnect(Header);

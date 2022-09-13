@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
+import CartDetails from "../../components/CartDetails";
 import Header from "../../components/Header";
-import Cart from "../../components/Header/Cart";
 
 import s from "./CartPage.module.scss";
 
@@ -9,7 +9,7 @@ export class CartPage extends PureComponent {
     return (
       <>
         <Header />
-        <Cart />
+        <CartDetails />
       </>
     );
   }
