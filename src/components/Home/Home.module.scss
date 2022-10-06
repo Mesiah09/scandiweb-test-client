@@ -1,0 +1,19 @@
+.layout {
+    margin: 30px;
+    padding: 3px 0;
+
+}
+
+.title {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 160%;
+    text-transform: capitalize;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}

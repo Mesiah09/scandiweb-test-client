@@ -88,14 +88,16 @@ class Item extends PureComponent {
           return products.map((item, index) => (
             <Link
               key={index}
-              className={`ItemCard ${!item.inStock && "disable"}`}
+              className={[s.itemCard] + " " + [!item.inStock && [s.disable]]}
               to={`/details/${item.id}`}
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <div className={`itemWrap ${!item.inStock && "stockImg"}`}>
+              <div
+                className={[s.itemWrap] + " " + [!item.inStock && [s.stockImg]]}
+              >
                 <div className={s.imgWrap}>
                   <img
-                    className={`item__image`}
+                    className={s.itemImg}
                     src={item.gallery[0]}
                     style={{
                       borderRadius: "8px",

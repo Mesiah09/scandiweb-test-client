@@ -8,6 +8,7 @@ import Currencies from "./Currencies";
 import Cart from "./Cart";
 import Categories from "./Categories";
 import s from "./Header.module.scss";
+import "./Header.module.scss";
 
 export class Header extends PureComponent {
   constructor(props) {
@@ -32,12 +33,16 @@ export class Header extends PureComponent {
     const { totalQty, cart } = this.props;
     return (
       <div className={s.header}>
-        <div className={s.categoriesWrapper} onClick={this.refreshPage}>
-          <Categories qty={totalQty} />
+        <div className={s.headerItems} onClick={this.refreshPage}>
+          <Categories length={cart.length} qty={totalQty} />
         </div>
-        <Logo />
-        <div className={s.trail}>
-          <div className={s.curWrapper}>
+
+        <div onClick={() => {}}>
+          <Logo />
+        </div>
+
+        <div className={s.trailItems}>
+          <div className={[s.headerItem] + " " + [s.dropdown]}>
             <div
               className={s.link}
               onClick={() => {
@@ -54,19 +59,22 @@ export class Header extends PureComponent {
                   justifyContent: "space-between",
                 }}
               >
-                <p>{localStorage.getItem("symbol")}</p>
+                <p style={{ paddingRight: 5 }}>
+                  {localStorage.getItem("symbol")}
+                </p>
                 <Icon name="icon-down" width="6" height="3" />
               </div>
             </div>
             <div
-              className={`dropdownMenu ${
-                this.state.toggleCurr && "active-menu"
+              className={`${s.dropdownMenu} ${
+                this.state.toggleCurr && [s.activeMenu]
               }`}
             >
               <Currencies value={this.optionClickHandler} />
             </div>
           </div>
-          <div className={s.cartWrapper}>
+
+          <div className={`${s.headerItem} ${s.dropdown}`}>
             <div
               className={s.link}
               onClick={() => {
@@ -84,18 +92,29 @@ export class Header extends PureComponent {
                   marginRight: 5,
                 }}
               >
-                <div>
+                <div
+                  style={{
+                    paddingRight: 5,
+                  }}
+                >
                   <img
                     src={trolley}
                     alt=""
                     height={23}
                     style={{ objectFit: "contain" }}
                   />
+                  {cart.length !== 0 && (
+                    <>
+                      <div className={s.qtyIcon}>{totalQty}</div>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
             <div
-              className={`dropdown ${this.state.toggleCart && "active-menu"}`}
+              className={`${s.dropdown} ${
+                this.state.toggleCart && s.activeMenu
+              }`}
             ></div>
             {this.state.toggleCart ? <Cart /> : ""}
           </div>

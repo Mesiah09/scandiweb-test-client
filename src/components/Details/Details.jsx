@@ -31,7 +31,6 @@ export class Details extends PureComponent {
   };
 
   setMainPic = (photo) => {
-    // alert("accepted image");
     this.setState({ mainPic: photo });
   };
 
@@ -63,7 +62,6 @@ export class Details extends PureComponent {
     const isSelected = this.state.attributes.map((a) =>
       a.items.find((i) => i.selected === true)
     );
-    //testintg whether all elements in the isSellected array is not undefined
     if (isSelected.every((item) => item !== undefined)) {
       const newId = `${product.id} ${isSelected.map((i) => i.id).join(" ")}`;
       const updatedProduct = {
@@ -102,13 +100,13 @@ export class Details extends PureComponent {
           const description = product.description;
 
           return (
-            <div className={s.detailed}>
+            <div className={s.details}>
               <div className={s.images}>
                 <div className={s.smallImg}>
                   {product.gallery.map((item, index) => (
                     <img
                       key={index}
-                      className={s.imgSmall}
+                      className={s.iSmall}
                       onClick={() => this.setMainPic(item)}
                       src={item}
                     />
@@ -123,15 +121,16 @@ export class Details extends PureComponent {
               </div>
 
               <div className={s.cartDetails}>
-                <h2 className={s.productName}>{product.name}</h2>
-                <p className={s.productBrand}>{product.Brand}</p>
+                <h2 className={s.name}>{product.name}</h2>
+                <p className={s.brand}>{product.brand}</p>
                 <br />
-                <div className={s.atbAll}>
+
+                <div className={s.allAtb}>
                   {product.attributes.map((a) => (
                     <div className={s.atb} key={`${product.id} ${a.id}`}>
                       <p className={s.atbTitle}>{`${a.name}:`}</p>
                       <div className={s.atbList}>
-                        {a.item.map((item, i) => (
+                        {a.items.map((item, i) => (
                           <div key={`${product.id} ${item.id}`}>
                             <input
                               type="radio"
@@ -145,7 +144,9 @@ export class Details extends PureComponent {
                             <label htmlFor={`${a.id} ${item.id}`}>
                               <div
                                 className={
-                                  a.type === "swatch" ? "atbText" : "atbColor"
+                                  a.type !== "swatch"
+                                    ? [s.atbText]
+                                    : [s.atbColor]
                                 }
                                 style={
                                   a.type === "swatch"
@@ -169,14 +170,18 @@ export class Details extends PureComponent {
                     </div>
                   ))}
                 </div>
+
                 <div className={s.price}>
                   <div className={s.label}>PRICE:</div>
-                  <div className={s.tag}>
+
+                  {/* I've to Implement a new class component as I did for Attribute above */}
+                  <div className={s.priceTag}>
                     <div className={s.symbol}>{price.currency.symbol}</div>
                     <div className={s.amount}>{price.amount}</div>
                   </div>
                 </div>
-                <div className={s.btnBlock}>
+
+                <div className={s.button}>
                   <div
                     onClick={() => {
                       this.addProductToCart(product);
@@ -194,6 +199,7 @@ export class Details extends PureComponent {
                     </p>
                   )}
                 </div>
+
                 <div
                   className={s.description}
                   dangerouslySetInnerHTML={{ __html: product.description }}

@@ -11,7 +11,7 @@ export class Home extends PureComponent {
   }
 
   componentDidMount() {
-    this.setState({ ctegoryName: window.location.pathname.slice(1) });
+    this.setState({ categoryName: window.location.pathname.slice(1) });
   }
 
   render() {

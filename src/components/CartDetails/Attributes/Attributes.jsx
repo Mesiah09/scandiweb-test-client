@@ -10,8 +10,8 @@ export class Attributes extends PureComponent {
       <div>
         {attributes.map((a) => (
           <div className={s.attributes} key={`${id} ${a.name}`}>
-            <p className={s.cartItem}>{`${a.name}:`}</p>
-            <div className={s.list}>
+            <p className={[s.cartItem] + " " + [s.atbTitle]}>{`${a.name}:`}</p>
+            <div className={s.atbList}>
               {a.items.map((item) => (
                 <div key={`${id} ${item.id}`}>
                   <input
@@ -25,10 +25,8 @@ export class Attributes extends PureComponent {
                     <div
                       className={
                         a.type !== "swatch"
-                          ? "attributes__text cart-item__attributes-text_" +
-                            item.selected
-                          : "attributes__color cart-item__attributes-color_" +
-                            item.selected
+                          ? `${s.atbText} ${s.atbText_}` + item.selected
+                          : `${s.atbColor} ${s.atbColor_}` + item.selected
                       }
                       style={
                         a.type === "swatch"

@@ -27,10 +27,10 @@ export class Slider extends PureComponent {
         {this.props.gallery.length > 1 ? (
           <div className={s.arrows}>
             <div className={s.arrowLeft} onClick={this.prevSlide}>
-              <Icon name="icon-slider" />
+              <Icon name="icon-slider" width="5" height="11" />
             </div>
             <div className={s.arrowRight} onClick={this.nextSlide}>
-              <Icon name="icon-slider" />
+              <Icon name="icon-slider" width="5" height="11" />
             </div>
           </div>
         ) : null}

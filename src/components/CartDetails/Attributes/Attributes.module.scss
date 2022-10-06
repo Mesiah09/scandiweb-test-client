@@ -1,0 +1,48 @@
+.attributes {
+    margin-bottom: 20px;
+}
+
+.atbTitle {
+    margin-bottom: 8px !important;
+}
+
+label,
+.atbTitle {
+    margin-top: 20px !important;
+    font-weight: 700;
+    font-size: large;
+    text-transform: uppercase;
+}
+
+.atbList {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+input {
+    display: none;
+}
+.atbText {
+    width: 63px;
+    height: 45px;
+    margin-right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #1D1F22;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+ 
+
+:checked+label .atbText {
+    background: #1D1F22;
+    color: #FFFFFF;
+}

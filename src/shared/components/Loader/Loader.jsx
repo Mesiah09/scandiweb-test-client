@@ -5,7 +5,7 @@ import s from "./Loader.module.scss";
 
 const Loader = ({ isEnabled }) => {
   return (
-    <div className={s.loadedr}>
+    <div className={s.loader}>
       <SpinnerCircular
         enabled={isEnabled}
         size={90}
